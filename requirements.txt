@@ -1,0 +1,4 @@
+###### Requirements with Version Specifiers ######
+pandas == 0.23.4
+requests == 2.19.1
+pyhdb == 0.3.4
