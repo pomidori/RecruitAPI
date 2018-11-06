@@ -114,4 +114,4 @@ dmypy.json
 .pyre/
 
 # xml
-*.xml
+.idea/*.xml
