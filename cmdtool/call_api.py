@@ -24,7 +24,7 @@ class CallAPI:
         :return: A list of json of a shop within a list.
         Example: [[<json file of a shop>], [<json file of a shop>], ...]
         """
-        key = '<your key goes here>'
+        key = 'your key goes here'
         body = []
         start_time = time.time()
         for i in range(1, self.count + 1):
