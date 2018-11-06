@@ -7,8 +7,9 @@ Description
 
 This is the command line tool to help you extract restaurant data from
 Recruit Open API
+
 Before you use
---------------
+---------------
 Make sure that you have the following environment ready and packages installed.
 
 * Python 3.6
@@ -16,7 +17,7 @@ Make sure that you have the following environment ready and packages installed.
 * pyhdb=0.3.4
 
 How to Use
-------------
+-----------
 After setting up the required environment, now you are ready to use the command line tool.
 As an example, if you want to extract 300 records (default=200) of restaurant data,
 specify 300 after the parameter -max, as shown here::

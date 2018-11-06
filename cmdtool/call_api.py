@@ -24,12 +24,13 @@ class CallAPI:
         :return: A list of json of a shop within a list.
         Example: [[<json file of a shop>], [<json file of a shop>], ...]
         """
+        key = '<your key goes here>'
         body = []
         start_time = time.time()
         for i in range(1, self.count + 1):
             # Setting up the url.
             url = 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/' + \
-                  '?key=a80cba9cab1491ab' + \
+                  '?key={}'.format(key) + \
                   '&large_area={}&format={}&start={}'.format(self.large_area, self.file, self.start)
 
             # Request api and extract the wanted shop entities in the returned json.
