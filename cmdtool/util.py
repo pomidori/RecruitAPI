@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import sys
-sys.path.append("..")
 
 
 class Clean:
@@ -13,7 +11,6 @@ class Clean:
 
     def shopname(self):
         """
-        :param body: number of shops
         :return: list of shops in string
         """
         name = ['店舗名']
@@ -23,69 +20,62 @@ class Clean:
 
     def address(self):
         """
-        :param body: number of shops
         :return: list of shop address in string
         """
         address = ['住所']
         for i in range(0, self.max_shops):
-            cleanaddress = self.body[i]['address'].replace('\u3000', '')
-            address.append(cleanaddress)
+            clean_address = self.body[i]['address'].replace('\u3000', '')
+            address.append(clean_address)
         return address
 
     def lat(self):
         """
-        :param body: number of shops
         :return: list of shop latitude in float
         """
         lat = ['緯度']
         for i in range(0, self.max_shops):
-            numberlat = float(self.body[i]['lat'])
-            lat.append(numberlat)
+            number_lat = float(self.body[i]['lat'])
+            lat.append(number_lat)
         return lat
 
     def lng(self):
         """
-        :param body: number of shops
         :return: list of shop longitude in float
         """
         lng = ['経度']
         for i in range(0, self.max_shops):
-            numberlng = float(self.body[i]['lng'])
-            lng.append(numberlng)
+            number_lng = float(self.body[i]['lng'])
+            lng.append(number_lng)
         return lng
 
     def capacity(self):
         """
-
-        :param body: number of shops
         :return: list of shop capacity in integer
         """
         capacity = ['収容人数']
         for i in range(0, self.max_shops):
-            intcapacity = int(self.body[i]['capacity'])
-            capacity.append(intcapacity)
+            int_capacity = int(self.body[i]['capacity'])
+            capacity.append(int_capacity)
         return capacity
 
     def genre(self):
         """
-        :param body: number of shops
         :return: list of shop genre in string
         """
         genre = ['ジャンル']
         for i in range(0, self.max_shops):
-            strgenre = str(self.body[i]['genre']['name'])
-            genre.append(strgenre)
+            str_genre = str(self.body[i]['genre']['name'])
+            genre.append(str_genre)
         return genre
 
     def midnight(self):
         """
-        :param body: number of shops
         :return: list of shop midnight operation flag in string
         """
         midnight = ['深夜営業']
         for i in range(0, self.max_shops):
-            strmidnight = str(self.body[i]['midnight'])
-            midnight.append(strmidnight)
+            str_midnight = str(self.body[i]['midnight'])
+            midnight.append(str_midnight)
         return midnight
 
 

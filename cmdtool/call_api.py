@@ -2,13 +2,25 @@
 # -*- coding: utf-8 -*-
 import requests
 import time
-from cmdtool.util import Clean
+from util import Clean
 import pandas as pd
 
 
 class CallAPI:
-    def __init__(self, large_area, max_shops, file="json", start=0, min_count=10):
+    """
+    
+    """
+    def __init__(self, key, large_area, max_shops, file="json", start=0, min_count=10):
+        """
+        :param key: your developer key
+        :param large_area: Recruit API parameter to specify area
+        :param file: Type of data format you want to return: json or xml
+        :param file: file type, json or xml
+        :param start: starting position of call
+        :param min_count: minimum unit for a call
+        """
         # Initialize the parameters.
+        self.key = str(key)
         self.large_area = large_area
         self.max_shops = max_shops
         self.file = file
@@ -19,18 +31,15 @@ class CallAPI:
     def shops(self):
         """
         Call recruit open api to extract required shop data.
-        :param large_area: Recruit API parameter to specify area
-        :param file: Type of data format you want to return: json or xml
         :return: A list of json of a shop within a list.
         Example: [[<json file of a shop>], [<json file of a shop>], ...]
         """
-        key = 'your key goes here'
         body = []
         start_time = time.time()
         for i in range(1, self.count + 1):
             # Setting up the url.
             url = 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/' + \
-                  '?key={}'.format(key) + \
+                  '?key={}'.format(self.key) + \
                   '&large_area={}&format={}&start={}'.format(self.large_area, self.file, self.start)
 
             # Request api and extract the wanted shop entities in the returned json.
